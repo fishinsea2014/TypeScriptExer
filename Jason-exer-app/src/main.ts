@@ -10,6 +10,6 @@ if (environment.production) {
 }
 
 //Start the angular modules.
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic().bootstrapModule(AppModule)  //Jump to start module.
   .catch(err => console.error(err));
 
