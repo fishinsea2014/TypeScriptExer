@@ -1,3 +1,6 @@
+#Exercise Notes
+--AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app. AngularJS services are: Lazily instantiated – AngularJS only instantiates a service when an application component depends on it.
+
 # JasonExerApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
