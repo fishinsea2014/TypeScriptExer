@@ -43,7 +43,7 @@ const AUTHORS: author[] = [
 
     <h3>The child title is: {{childTitle1}}</h3>
     <app-detail #childTitle [props]="selectedAuthor" (changeNumber)="numberChange($event)"></app-detail>
-    
+    <app-slider></app-slider>
 
   `,
   //styleUrls: ['./app.component.css']
@@ -111,7 +111,7 @@ export class AppComponent {
     //debugger;
   }
 
-  @ViewChild('childTitle') childTitleA;
+  @ViewChild('childTitle') childTitleA; //Another way to get the child properties
   ngOnInit(): void {
     this.childTitle1 = this.childTitleA.getTitle();
     //debugger;
