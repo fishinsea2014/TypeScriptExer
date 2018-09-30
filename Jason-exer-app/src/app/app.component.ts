@@ -17,7 +17,6 @@ const AUTHORS: author[] = [
   selector: 'app-root', //Referenced in index.html
   //templateUrl: './app.component.html', 
   template:`
-
     <app-purchase></app-purchase>
     <h1>List of the authors</h1>
     <ul class="authors">
