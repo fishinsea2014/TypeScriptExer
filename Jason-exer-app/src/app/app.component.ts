@@ -17,7 +17,16 @@ const AUTHORS: author[] = [
   selector: 'app-root', //Referenced in index.html
   //templateUrl: './app.component.html', 
   template:`
-    <app-purchase></app-purchase>
+  <div>
+    <h3>====Pipe filter data====</h3>
+    <h3>{{pipeObj.date | date:'y-MM-dd HH:mm:ss'}}</h3>
+    <h3>{{pipeObj.str | uppercase}}</h3>
+    <h3>{{pipeObj.str | lowercase}}</h3>
+    <h3>{{pipeObj.str | slice:0:5}}</h3>
+    <h3>{{pipeObj.n | number:'.1-2'}}</h3>
+    <h3>====End of Pipe filter data====</h3>
+  </div>  
+  <app-purchase></app-purchase>
     <h1>List of the authors</h1>
     <ul class="authors">
       <li *ngFor="let author of authors"
@@ -103,6 +112,15 @@ export class AppComponent {
   selectedAuthor:author;
   num:number;
   childTitle1:string;
+
+  //Pipe data
+  pipeObj = {
+    date: new Date(),
+    str: 'Hello WORLD',
+    n: 22.36541,
+    flag: true
+  }
+
   onChange(author:author):void {
     this.selectedAuthor = author;
   }
