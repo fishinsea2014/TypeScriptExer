@@ -1,15 +1,19 @@
 import {Component} from '@angular/core';
+import { Article } from './service/article.interface';
+import { ArticleService} from './app.articles.service';
 
-interface Artical {
-    state: boolean;
-    name: string;
-}
+// interface Artical {
+//     state: boolean;
+//     name: string;
+// }
 
-const ARTICALS: Artical[]= [
-    {state: true, name:'Memory'},
-    {state: false, name:'Speaker'},
-    {state: false, name:'Screen'}
-];
+// const ARTICALS: Artical[]= [
+//     {state: true, name:'Memory'},
+//     {state: false, name:'Speaker'},
+//     {state: false, name:'Screen'}
+// ];
+
+
 
 @Component({
     selector:'app-purchase',
@@ -57,14 +61,35 @@ const ARTICALS: Artical[]= [
             text-align: center;
         }
     `
-    ]
+    ],
+
+    //Add data source from service
+    providers:[ArticleService]
     
 
 })
 
 export class PurchaseComponent {
+    
+    //Inject the dependency in construction method
+    constructor(public ArticleService: ArticleService){}
+
+
     newItem: string ="item";
-    items = ARTICALS;
+    //items = ARTICALS;
+    items: Article[];
+    //Get articles from ArticleService
+    getData() {
+        this.ArticleService.getListPre()
+            .then(articles => {
+                this.items = articles;
+            })
+    }
+
+    //Retrive articles when initiating the component
+    ngOnInit(): void {
+        this.getData();
+    }
 
     //Select all
     allChecked = false;
@@ -94,8 +119,4 @@ export class PurchaseComponent {
         // else this.allChecked = false;
         this.items.length == checkedItems.length ? this.allChecked=true : this.allChecked = false;
     }
-
-
-
-
 }    
