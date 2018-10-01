@@ -1,6 +1,16 @@
 # Exercise Notes
 + AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app. AngularJS services are: Lazily instantiated – AngularJS only instantiates a service when an application component depends on it.
 + Handle the global interface, data and methods.
++ Steps of using service, take get data as example:
+    + Create the data set, as in dir of service;
+    + Create the service and define the get data methods, as in app.article.service.ts;
+    + In the component of using the service
+        + import the services
+        + Add 'providers' in @Component segment
+        + In the component class:
+            + Reference the service in constructor
+            + Define the methods to using the services
+            + Reference the methods in 'ngOnInit'
 
 # JasonExerApp
 

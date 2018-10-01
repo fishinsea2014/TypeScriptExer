@@ -6,6 +6,8 @@ import { Article } from './service/article.interface';
 
 @Injectable()
 export class ArticleService {
+
+    //Here can has multiple methods of service.
     getList(): Promise<Article[]> {
         return Promise.resolve(ArticleList);
     }
