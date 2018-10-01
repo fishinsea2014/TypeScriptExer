@@ -19,6 +19,7 @@ const AUTHORS: author[] = [
   //templateUrl: './app.component.html', 
   template:`
   <div>
+    <app-router></app-router>
     <h3>====Pipe filter data====</h3>
     <h3>{{pipeObj.date | date:'y-MM-dd HH:mm:ss'}}</h3>
     <h3>{{pipeObj.str | uppercase}}</h3>

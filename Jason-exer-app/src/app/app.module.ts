@@ -7,18 +7,34 @@ import { DetailComponent} from './detail.component'; //All the components have t
 import { SliderComponent} from './slider.component';
 import { PurchaseComponent} from './purchase.component';
 import { PurchaseStatePipe} from './app.purchaseStatePipe';
+import { RouterComponent } from './app.component.router';
 
+import { AppRouterModule } from './router/router.module';
+import { HomeComponent } from './router/home';
+import { AboutComponent } from './router/about';
+import { ContactComponent } from './router/contact';
+ 
 @NgModule({
   declarations: [  //Declare user components
     AppComponent,
     DetailComponent,
     SliderComponent,
     PurchaseComponent,
-    PurchaseStatePipe
+    PurchaseStatePipe,
+    RouterComponent,
+
+    //For router
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
+
   imports: [ //Declare dependencies
     BrowserModule,
-    FormsModule
+    FormsModule,
+
+    //For router
+    AppRouterModule
   ],
   providers: [], //The creater of the servicies
   bootstrap: [AppComponent] // Start components
