@@ -1,7 +1,8 @@
 # Exercise Notes
-+ AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app. AngularJS services are: Lazily instantiated – AngularJS only instantiates a service when an application component depends on it.
-+ Handle the global interface, data and methods.
-+ Steps of using service, take get data as example:
++Service 
+    AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app. AngularJS services are: Lazily instantiated – AngularJS only instantiates a service when an application component depends on it.
+    + Handle the global interface, data and methods.
+    + Steps of using service, take get data as example:
     + Create the data set, as in dir of service;
     + Create the service and define the get data methods, as in app.article.service.ts;
     + In the component of using the service
@@ -11,6 +12,13 @@
             + Reference the service in constructor
             + Define the methods to using the services
             + Reference the methods in 'ngOnInit'
++ Routing
+  The Angular Router enables navigation from one view to the next as users perform application tasks.
+  + Steps of setup routing  
+    + Setup component of routing, like about.ts, home.ts in router dir.
+    + Config router in router.module.ts, using RouterModule and Routes
+    + In app.module.ts, add routing component in user component and AppRouterModule in dependencies
+    + In component app.component.router.ts, which locate the router, use routerLink jump to target and router-outlet display the target. 
 
 # JasonExerApp
 
